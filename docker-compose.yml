@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+    nexus:
+        container_name: nexus
+        image: sonatype/nexus3
+        restart: always
+        ports:
+            - 8082:8081
+        networks:
+            - repositories
+
+networks:
+    repositories:
+        name: repositories
